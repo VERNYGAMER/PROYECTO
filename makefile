@@ -7,7 +7,7 @@ FFLAGS= -O3 -fbounds-check
 # Extensiones de los ficheros 
 .SUFFIXES: .o .f90 .f95
 # Objetos
-OBJS= ordenar.o\
+OBJS= modulo.o\
 principal.o
 # Borrar archivos
 RM=del
