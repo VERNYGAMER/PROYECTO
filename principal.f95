@@ -1,4 +1,7 @@
 program proyecto
+
+    use ordenar
+
     implicit none
     
     integer :: i, j, aux, ierr, met
