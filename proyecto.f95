@@ -1,7 +1,7 @@
 program proyecto
     implicit none
     
-    integer :: i, j, aux, ierr, met
+    integer :: ierr, met
     integer, parameter :: n=8
     integer :: X(n)
 
@@ -35,5 +35,5 @@ program proyecto
     end select
 
     close(10) !Cerramos el fichero
-    
+
 end program proyecto
