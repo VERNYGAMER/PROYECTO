@@ -7,8 +7,8 @@ FFLAGS= -O3 -fbounds-check
 # Extensiones de los ficheros 
 .SUFFIXES: .o .f90 .f95
 # Objetos
-OBJS= modulos.o\
-proyecto.o
+OBJS= ordenar.o\
+principal.o
 # Borrar archivos
 RM=del
 # Ejecucion
