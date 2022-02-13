@@ -41,5 +41,23 @@ module ordenar
             write(unit=10, fmt='(8(I4))', iostat=ierr) X
         end do
     end subroutine ord_seleccion
+
+!_________________________________________________________________________________________________
+    subroutine ord_insercion(X,n)
+        integer :: i, j, aux
+        integer :: X(n)
+
+        do i=2,n         !Recorremos la lista empezando por el segundo elemento
+            aux=X(i)     !Guardamos ese valor
+            j=i-1
+            do while (X(j)>aux.and.j>0) !Lo comparamos
+                X(j+1)=X(j)
+                j=j-1    !Si es menor lo intercambiamos
+                if (j==0)exit 
+            end do
+            X(j+1)=aux 
+            write(unit=10, fmt='(8(I4))', iostat=ierr) X
+        end do
+    end subroutine ord_insercion 
     
 end module
