@@ -6,9 +6,6 @@ program proyecto
     integer :: X(n)
 
     X=(/2,0,6,5,3,1,8,4/)
-
-    open(unit=10, file='Ordenar_vector.txt', iostat=ierr) !Abrimos el fichero
-    if (ierr/=0) stop 'no es posible abrir el archivo Ordenar_vector.txt'
     
     write(*,*) 'Selecciona el metodo deseado para ordenar el vector'
     write(unit=10, fmt='(8(I4))', iostat=ierr) X
@@ -33,7 +30,5 @@ program proyecto
     case default
         write(*,*) 'Valor no valido. Reinicie el programa'
     end select
-
-    close(10) !Cerramos el fichero
 
 end program proyecto
