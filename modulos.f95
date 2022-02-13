@@ -59,5 +59,24 @@ module ordenar
             write(unit=10, fmt='(8(I4))', iostat=ierr) X
         end do
     end subroutine ord_insercion 
+
+!_________________________________________________________________________________________________
+    subroutine ord_burbuja(X,n) 
+        integer :: i, j, aux
+        integer :: X(n)
+
+        X=(/2,0,6,5,3,1,8,4/)
+
+        do i=1,n-1                   !Salen combinaciones de todos los elementos      
+            do j=i+1,n               !ordenados por parejas
+                if (X(i)>X(j)) then  
+                    aux=X(i)
+                    X(i)=X(j)        !Si el numero de la izquierda es mayor, cambia uno por otro
+                    X(j)=aux
+                end if
+            end do
+            write(unit=10, fmt='(8(I4))', iostat=ierr) X
+        end do
+    end subroutine ord_burbuja
     
 end module
