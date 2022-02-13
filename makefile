@@ -1,21 +1,26 @@
-# Compilador Fortran
+# Compilador de Fortran
 FC=gfortran
-# LINKER
+
+# Compilador usado para "linkar"
 LD=gfortran
-# Opciones del Compilador
+
+# Opciones de compilacion
 FFLAGS= -O3 -fbounds-check
-# Extensiones de los ficheros 
-.SUFFIXES: .o .f90 .f95
-# Objetos
+
+#Borrar ficheros. En Linux/Mac sustituir por  'RM=rm'
+RM=del
+
+# Ficheros .o del codigo por orden
 OBJS= modulo.o\
 principal.o
-# Borrar archivos
-RM=del
-# Ejecucion
-programa : $(OBJS)
-	$(LD) -o $@ $(OBJS)
-.f95.o:
+
+# Para compilar y crear ejecutable 'make' o 'make prog'
+prog: $(OBJS)
+	$(LD) -o $@  $(OBJS)
+
+%.o: %.f95
 	$(FC) -c $< $(FFLAGS) -o $@
-# Limpieza
+
+# Para borrar archivos antiguos 'make clean'
 clean:
-	$(RM) $(OBJS) *.mod*.exe
+	$(RM) $(OBJS) *.mod
